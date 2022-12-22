@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 3030;
+const port = 8080;
 const admin = require("firebase-admin");
 const cors = require('cors');
 app.use(cors({
@@ -103,6 +103,9 @@ app.get('/atten', (req, res)=>{
 })
 
 
+app.get('/',(req,res)=>{
+    res.send('Hola')
+})
 
 app.listen(port,()=>{
     console.log(`Server is running at ${port}`)
