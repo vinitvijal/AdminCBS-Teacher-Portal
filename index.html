@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Gen</title>
+    <style>
+        #qrcode {
+            position: relative;
+        }
+        img {
+            position: absolute;
+
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+
+
+    
+    <div id="qrcode" ></div>
+    <!-- <img src="" alt="" id="realQR"> -->
+    <script src="qrcode.js"></script>
+<script>
+        async function qrData(){
+            const res = await fetch('http://ec2-13-235-23-89.ap-south-1.compute.amazonaws.com:3030/test')
+            const data = await res.json()
+            makeQR(data.msg)
+            
+            // const element = document.getElementById("qrcode")
+            // let newElem = element.querySelector('img').getAttribute('src');
+                
+
+            console.log(data)
+          
+            // img.src = last.src
+
+            setTimeout(qrData,5000)
+
+        }
+        qrData()
+    </script>
+    <script>
+            function makeQR(val){
+                console.log(val)
+                var qrcode = new QRCode("qrcode", {
+                    text: String(val),
+                    width: 128,
+                    height: 128,
+                    colorDark : "#000000",
+                    colorLight : "#ffffff",
+                    correctLevel : QRCode.CorrectLevel.H
+                })}
+        
+    </script>
+
+
+    
+</body>
+</html>
