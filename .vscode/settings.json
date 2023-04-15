@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/c1c7e6f2-1594-436f-9c5e-dd657c92edf8/AppServices/subscriptions/c1c7e6f2-1594-436f-9c5e-dd657c92edf8/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/Attendance-Server",
+    "appService.deploySubpath": "."
+}
