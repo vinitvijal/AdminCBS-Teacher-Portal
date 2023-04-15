@@ -104,7 +104,7 @@ app.get('/atten', (req, res)=>{
 
 
 app.get('/',(req,res)=>{
-    res.send('Hola')
+    res.send('Hello World')
 })
 
 app.listen(port,()=>{
